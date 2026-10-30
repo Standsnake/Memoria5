@@ -50,8 +50,10 @@ def xy(count):
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
 
 
+#Se cambio la funcion agregando que se puedan contar los taps
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    state['taps'] += 1      
     spot = index(x, y)
     mark = state['mark']
 
@@ -61,7 +63,6 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
-
 
 def draw():
     """Draw image and tiles."""
