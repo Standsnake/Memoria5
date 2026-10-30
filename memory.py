@@ -85,9 +85,14 @@ def draw():
         color('black')
         write(tiles[mark], align="center", font=('Arial', 25, 'normal'))
 
+    # se agrega un contador frfr pero este de a deveras
+    up()
+    goto(-190, 205)
+    color('red')
+    write(f"Taps: {state['taps']}", font=('Arial', 16, 'normal'))
+
     update()
     ontimer(draw, 100)
-
 
 shuffle(tiles)
 setup(420, 420, 370, 0)
