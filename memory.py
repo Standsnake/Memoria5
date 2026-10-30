@@ -53,6 +53,8 @@ def xy(count):
 #Se cambio la funcion agregando que se puedan contar los taps
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    if not any(hide):           # si se gano ya no cuenta los taps
+        return
     state['taps'] += 1      
     spot = index(x, y)
     mark = state['mark']
