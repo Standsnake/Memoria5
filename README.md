@@ -15,6 +15,8 @@
 ## Funcionalidades agregadas
 - **Centrado de texto en casillas:** Se mejoró el centrado del contenido de las fichas para que los números queden bien centrados dentro del cuadro.
 - **Símbolos en vez de números:** Se cambiaron los números del 0 al 31 por 32 parejas de símbolos para ayudar a la memoria del jugador.
+- Se cuenta y muestra el numero de taps del usuario en la parte superior del tablero
+- Se muestra un mensaje de victoria cuando todos los cuadros fueron detectados frfr 
 ## Cambios en el código
 - Se modificó `draw()` para ajustar la posición de escritura con `goto(x + 25, y + 5)`.
 - Se añadió el `align="center"` a la función `write()` y se ajustó el tamaño de fuente a 25 en `font=('Arial', 25, 'normal')` para lograr un mejor centrado..
