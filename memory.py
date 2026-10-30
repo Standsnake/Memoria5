@@ -22,7 +22,8 @@ SIMBOLOS = [
     '├', '═', '║', '$', '%', '█', '░', '▒'
 ]
 tiles = SIMBOLOS * 2
-state = {'mark': None}
+#contador a snate
+state = {'mark': None, 'taps': 0}
 hide = [True] * 64
 
 
@@ -49,8 +50,12 @@ def xy(count):
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
 
 
+#Se cambio la funcion agregando que se puedan contar los taps
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    if not any(hide):           # si se gano ya no cuenta los taps
+        return
+    state['taps'] += 1      
     spot = index(x, y)
     mark = state['mark']
 
@@ -60,7 +65,6 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
-
 
 def draw():
     """Draw image and tiles."""
@@ -83,9 +87,21 @@ def draw():
         color('black')
         write(tiles[mark], align="center", font=('Arial', 25, 'normal'))
 
+    # Contador de taps
+    up()
+    goto(-190, 205)
+    color('red')
+    write(f"Taps: {state['taps']}", font=('Arial', 16, 'normal'))
+
+    # se agrego aca para que salgan las letras cuando no haya mas espacios
+    if not any(hide):
+        up()
+        goto(0, -15)
+        color('red')
+        write("¡Ganaste!", align="center", font=('Arial', 30, 'bold'))
+
     update()
     ontimer(draw, 100)
-
 
 shuffle(tiles)
 setup(420, 420, 370, 0)
