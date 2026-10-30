@@ -22,7 +22,8 @@ SIMBOLOS = [
     '├', '═', '║', '$', '%', '█', '░', '▒'
 ]
 tiles = SIMBOLOS * 2
-state = {'mark': None}
+#contador a snate
+state = {'mark': None, 'taps': 0}
 hide = [True] * 64
 
 
