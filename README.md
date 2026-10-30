@@ -2,7 +2,7 @@
 # Juego Memory
 
 > Este proyecto es una copia de Memory en Python utilizando las librerías `turtle` y `freegames`. Permite al usuario jugar al juego de memoria destapando parejas de fichas.
-> Versión: 1
+> Versión: 2
 
 ## Funcionalidades Base
 - **Tablero:** Un tablero de 8x8 con 64 fichas organizadas en cuadrícula que ocultan pares de números del 0 al 31.
@@ -14,11 +14,11 @@
 
 ## Funcionalidades agregadas
 - **Centrado de texto en casillas:** Se mejoró el centrado del contenido de las fichas para que los números queden bien centrados dentro del cuadro.
-
+- **Símbolos en vez de números:** Se cambiaron los números del 0 al 31 por 32 parejas de símbolos para ayudar a la memoria del jugador.
 ## Cambios en el código
 - Se modificó `draw()` para ajustar la posición de escritura con `goto(x + 25, y + 5)`.
 - Se añadió el `align="center"` a la función `write()` y se ajustó el tamaño de fuente a 25 en `font=('Arial', 25, 'normal')` para lograr un mejor centrado..
-
+- Se creó la lista `SIMBOLOS` con 32 símbolos y se asignó a `tiles=SIMBOLOS*2`
 ## Requisitos e Instalación
 1. Asegurarse de tener Python 3 instalado.
 2. Instalar la librería requerida:
