@@ -85,11 +85,18 @@ def draw():
         color('black')
         write(tiles[mark], align="center", font=('Arial', 25, 'normal'))
 
-    # se agrega un contador frfr pero este de a deveras
+    # Contador de taps
     up()
     goto(-190, 205)
     color('red')
     write(f"Taps: {state['taps']}", font=('Arial', 16, 'normal'))
+
+    # se agrego aca para que salgan las letras cuando no haya mas espacios
+    if not any(hide):
+        up()
+        goto(0, -15)
+        color('red')
+        write("¡Ganaste!", align="center", font=('Arial', 30, 'bold'))
 
     update()
     ontimer(draw, 100)
